@@ -46,7 +46,8 @@ $("document").ready(function () {
         let indexValue;
         //is the hour block in the array?
         let inArray = false;
-        for (let i = 0; i < taskLists.lenght; i++) {
+
+        for (let i = 0; i < taskLists.length; i++) {
             let taskEl = taskLists[i];
             //if hour block is in array
             if (taskEl.hour == hourID) {
@@ -70,7 +71,7 @@ $("document").ready(function () {
     });
 
     $(".hoursRow").each(function() {
-        for (let i = 0; i < taskLists.lenght; i++) {
+        for (let i = 0; i < taskLists.length; i++) {
             if ($(this).attr("id") == taskLists[i].hour){
                 let taskText = $(this).prev(".tasks").val();
                 let taskBox = $("<div>");
