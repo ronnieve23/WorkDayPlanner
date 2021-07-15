@@ -1,6 +1,10 @@
+//local storage
+let taskList = JSON.parse(localStorage.getItem('taskLists')) || [];
+
 $(document).ready(function () {
     //I hope to god this displays date and time
-    $('#currentDay').text(moment().format('dddd, MMMM Do, YYYY, h:mm:ss A'))
+    $('#currentDay').text(moment().format('dddd, MMMM Do, YYYY'));
+    $('#currentTime').text(moment().format('h:mm a'));
 
     //For determining if task is past,present, or future and adding colors
     let currentTime= Number(moment().format("H"))
@@ -21,9 +25,11 @@ $(document).ready(function () {
     //check time values to apply approriate color as time passes
     setInterval(function(){
         taskColors()
-    }, (1000*60)*10)
+    }, (1000))
 
+    //This where we start saving tasks
 
+    $(".hoursRow").on("click",".saveBtn")
 
 taskColors();
 })
