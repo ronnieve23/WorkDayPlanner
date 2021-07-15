@@ -3,6 +3,16 @@ $(document).ready(function () {
     $('#currentDay').text(moment().format('dddd, MMMM Do, YYYY, h:mm:ss A'))
 
     //For determining if task is past,present, or future
+  
+    
+
+
+
+
+
+
+
+
     
 })
 
