@@ -1,13 +1,13 @@
 //local storage
 let taskLists = JSON.parse(localStorage.getItem('taskLists')) || [];
 
-$(document).ready(function () {
+$("document").ready(function () {
     //I hope to god this displays date and time
-    $('#currentDay').text(moment().format('dddd, MMMM Do, YYYY'));
-    $('#currentTime').text(moment().format('h:mm a'));
+    $('#currentDay').text(moment().format('dddd, MMMM Do, YYYY'))
+    $('#currentTime').text(moment().format('h:mm a'))
 
     //For determining if task is past,present, or future and adding colors
-    let currentTime = Number(moment().format("H"))
+    let currentTime = Number(moment().format("H"));
 
     function taskColors() {
         $(".tasks").each(function () {
@@ -25,16 +25,17 @@ $(document).ready(function () {
     //check time values to apply approriate color as time passes
     setInterval(function () {
         taskColors()
-    }, (1000))
+    }, (1000*60)* 10)
 
     //This where we start saving tasks
 
     $(".hoursRow").on("click", ".saveBtn", function() {
+        console.log("clicked")
         let hourID = $(this).parent().attr("id")
-
+        console.log(hourID)
         //stores task input
         let taskInput = $(this).prev(".tasks").val().trim();
-
+        console.log(taskInput)
         //store values to an object
         let taskObj = {
             hour: hourID,
@@ -75,12 +76,11 @@ $(document).ready(function () {
                 let taskBox = $("<div>");
                 taskText = taskLists[i].task;
                 $(this).children("textarea").append(taskText)
-
             };
         };
     });
 
-    taskColors();
+    taskColors()
 })
 
 
