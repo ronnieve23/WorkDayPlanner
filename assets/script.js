@@ -1,10 +1,9 @@
-//display date and time
+$(document).ready(function () {
+    //I hope to god this displays date and time
+    $('#currentDay').text(moment().format('dddd, MMMM Do, YYYY, h:mm:ss A'))
 
-    var getTime = function () {
-        var timeNow = moment().format('LLLL');
-        $("#currentDay").text(timeNow);
-
-        currentTime = moment().hour();
-    }
+    
+}
+)
 
 
