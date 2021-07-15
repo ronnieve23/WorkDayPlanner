@@ -8,7 +8,7 @@ $("document").ready(function () {
 
     //For determining if task is past,present, or future and adding colors
     let currentTime = Number(moment().format("H"));
-
+     
     function taskColors() {
         $(".tasks").each(function () {
             let taskTime = $(this).parent().attr("id")
